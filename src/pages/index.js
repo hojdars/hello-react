@@ -1,16 +1,16 @@
 import React from "react"
 
-import Header from "../components/header"
-import Menu from "../components/menu"
+import Layout from "../components/layout"
 
 export default function Home() {
   return (
-    <div class="page">
-      <Header headerText="DemoWeb" headerSubText="welcome home." />
-      <Menu />
+    <Layout headerText="DemoWeb">
       <div class="text">
-        <h1>Hello Home!</h1>
+        <h1>welcome.</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut massa nunc. Praesent at aliquet est. Nulla facilisi. Nulla varius malesuada metus, ultricies commodo justo malesuada a. Maecenas condimentum diam sed justo luctus sagittis. Donec ante sem, dictum non maximus nec, placerat in urna.
+        </p>
       </div>
-    </div>
+    </Layout>
   )
 }

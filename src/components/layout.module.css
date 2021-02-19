@@ -1,0 +1,14 @@
+.listLinkItem {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.menuMain {
+    list-style: none;
+    float: right;
+}
+
+.layoutMain {
+    margin: 2rem auto;
+    max-width: 45vw;
+}
