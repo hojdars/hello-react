@@ -1,24 +1,44 @@
 import React from "react"
 
+import { graphql } from "gatsby"
+
 import Layout from "../components/layout"
 
-export default function Home() {
+export default function Home({data}) {
     return (
-        <Layout headerText="DemoWeb">
-            <div class="text">
-                <h1>travel far away.</h1>
-                <p>
-                    Here be traveling and outdoorsy reports from our undertakings.
+        <Layout>
+        <div>
+            <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+            {data.allMarkdownRemark.edges.map(({ node }) => (
+              <div key={node.id}>
+                <h3>
+                  {node.frontmatter.title}{" "}
+                </h3>
+                <p>                  
+                <i>— {node.frontmatter.date}</i>
                 </p>
-                <p>
-                    <ul>
-                        <li>backpacking through <b>Madeira</b></li>
-                        <li>hikes from <b>Triglav National Park</b></li>
-                        <li>backpacking over <b>Nizke Tatry</b></li>
-                        <li>and more to come ...</li>
-                    </ul>
-                </p>
-            </div>
+                <p>{node.excerpt}</p>
+              </div>
+            ))}
+        </div>
         </Layout>
     )
 }
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`
