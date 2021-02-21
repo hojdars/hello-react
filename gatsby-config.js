@@ -5,6 +5,9 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: `MyDemoWeb`,
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-typography`,

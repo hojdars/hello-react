@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Link } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 
 import layoutStyles from "./layout.module.css"
 
@@ -22,18 +22,29 @@ const Menu = () => {
     )
 }
 
-const Title = props => {
+const Title = () => {
+    const data = useStaticQuery(        
+        graphql`
+            query {
+                site {
+                  siteMetadata {
+                    title
+                  }
+                }
+            }
+        `
+    )
     return (
         <Link to="/">
-            <h3 style={{ display: `inline` }}>{props.headerText}</h3>
+            <h3 style={{ display: `inline` }}>{data.site.siteMetadata.title}</h3>
         </Link>
     )
 }
 
-const Header = props => {
+const Header = () => {
     return (
         <div>
-            <Title headerText={props.headerText} />
+            <Title />
             <Menu />
         </div>
     )
@@ -42,8 +53,9 @@ const Header = props => {
 export default function Layout(props) {
     return (
         <div className={layoutStyles.layoutMain}>
-            <Header headerText={props.headerText} />
+            <Header />
             {props.children}
         </div>
     )
 }
+
