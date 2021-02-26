@@ -2,7 +2,7 @@ import React from "react"
 
 import Layout from "../components/layout"
 
-import pepe from "../../images/pepeHandsUp.jpg"
+import pepe_hands_up from "../../public/pepe_hands_up.jpg"
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ut massa nunc. Praesent at aliquet est. Nulla facilisi. Nulla varius malesuada metus, ultricies commodo justo malesuada a. Maecenas condimentum diam sed justo luctus sagittis. Donec ante sem, dictum non maximus nec, placerat in urna.
         </p>
 
-        <img src={pepe} alt="pepe" />
+        <img src={pepe_hands_up} alt="pepe" />
       </div>
     </Layout>
   )
