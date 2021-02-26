@@ -9,6 +9,10 @@ module.exports = {
     title: `MyDemoWeb`,
   },
   plugins: [
+    `gatsby-image`,
+    `gatsby-remark-images`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -22,6 +26,24 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+          },
+        ],
+        plugins: [`gatsby-remark-images`],
+      },
+    },
   ],
 }

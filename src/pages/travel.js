@@ -8,15 +8,15 @@ export default function Home({data}) {
     return (
         <Layout>
         <div>
-            <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-            {data.allMarkdownRemark.edges.map(({ node }) => (
+            <h4>{data.allMdx.totalCount} Posts</h4>
+            {data.allMdx.edges.map(({ node }) => (
               <div key={node.id}>
                 <Link to={node.fields.slug}>
                 <h3>
-                  {node.frontmatter.title}{" "}
+                  {node.frontmatter.title}
                 </h3>
                 </Link>
-                <p>                  
+                <p>
                 <i>— {node.frontmatter.date}</i>
                 </p>
                 <p>{node.excerpt}</p>
@@ -29,7 +29,7 @@ export default function Home({data}) {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       totalCount
       edges {
         node {
