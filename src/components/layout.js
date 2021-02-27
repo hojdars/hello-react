@@ -15,9 +15,9 @@ const ListLink = props => {
 const Menu = () => {
     return (
         <div className={layoutStyles.menuMain}>
-                <ListLink to="/">Home</ListLink>
-                <ListLink to="/about/">About</ListLink>
-                <ListLink to="/travel/">Travels</ListLink>
+            <ListLink to="/"><b>Home</b></ListLink>
+            <ListLink to="/about/"><b>About</b></ListLink>
+            <ListLink to="/travel/"><b>Travels</b></ListLink>
         </div>
     )
 }
@@ -57,7 +57,7 @@ export default function Layout(props) {
         <div className={layoutStyles.layoutMain}>
             <Header />
             <div className={layoutStyles.bodyMain}>
-            {props.children}
+                {props.children}
             </div>
         </div>
     )

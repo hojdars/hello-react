@@ -13,7 +13,7 @@ export default function BlogPost({ data }) {
         <p>
           Traveling to cool places is better than traveling to boring places.
           Some people like cities, some people like nature.
-          We are the _nature loving kind_, so do not expect to find museums and architecture here.
+          We are the <i>nature loving kind</i>, so do not expect to find museums and architecture here.
         </p>
 
         <p>Having said that, here are some places we can recommend you to visit:</p>

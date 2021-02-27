@@ -1,0 +1,11 @@
+.date {
+    color:#888;
+    line-height: calc(1ex / 0.32);
+    margin: 0.25ex 0;
+}
+
+.excerpt {
+    font-size: 1em;
+    line-height: calc(1ex / 0.32);
+    margin: 0.65ex 0;
+}
