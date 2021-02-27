@@ -39,22 +39,24 @@ const SingleImage = (props) => {
     )
 }
 
-// TODO: Styling this better
+const Container = styled.div`
+display: flex;
+width: 100%;
+padding-top: 10px;
+padding-bottom: 10px;
+`
 
 const ImageDescription = styled.div`
 text-align: center;
 padding-top: 5px;
-font-size: 18px;
 font-style: italic;
 `
 
-const ImagesContainer = styled.div`
-display: block;
-margin-left: auto;
-margin-right: auto;
-width: 50%;
-padding-top: 10px;
-padding-bottom: 10px;
+const ImageDescriptionContainer = styled.div`
+display: flex;
+flex: 33.33%;
+flex-direction: column;
+padding: 5px;
 `
 
 const MultipleImages = (props) => {
@@ -62,12 +64,11 @@ const MultipleImages = (props) => {
 
     props.images.forEach((image, index) => {
         const description = props.descriptions[index];
-        result.push(<ImageContainer key={image}><img src={image} alt={description} /></ImageContainer>)
-        result.push(<ImageDescription key={description}>{description}</ImageDescription>)
+        result.push(<ImageDescriptionContainer key={image}><ImageContainer><img src={image} alt={description} /></ImageContainer><ImageDescription key={description}>{description}</ImageDescription></ImageDescriptionContainer>)
     });
 
     return (
-        <ImagesContainer>{result}</ImagesContainer>
+        <Container>{result}</Container>
     );
 }
 

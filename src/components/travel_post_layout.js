@@ -1,9 +1,6 @@
 import React from "react"
-
 import { graphql, useStaticQuery, Link } from "gatsby"
-
 import { css } from "@emotion/react"
-
 import { Body } from "./layout"
 
 const Title = () => {
@@ -107,7 +104,7 @@ export default function TravelPostLayout(props) {
                 reading_time={props.reading_time}
             />
 
-            <Body>
+            <Body width="120">
                 <div
                     css={css`
                     h3 {

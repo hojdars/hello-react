@@ -70,3 +70,6 @@ yarn-error.log
 
 
 static/*.jpg
+static/*.png
+static/*/*.jpg
+static/*/*.png

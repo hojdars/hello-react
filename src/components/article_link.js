@@ -1,7 +1,18 @@
 import React from "react"
 import { Link } from "gatsby"
+import styled from "@emotion/styled"
 
-import articleLinkStyles from "./article_link.module.css"
+const Date = styled.div`
+color:#888;
+line-height: calc(1ex / 0.32);
+margin: 0.25ex 0;
+`
+
+const Excerpt = styled.div`
+font-size: 1em;
+line-height: calc(1ex / 0.32);
+margin: 0.65ex 0;
+`
 
 const ArticleLink = props => {
     return (
@@ -9,12 +20,12 @@ const ArticleLink = props => {
             <Link to={props.to}>
                 <h3>{props.title}</h3>
             </Link>
-            <div className={articleLinkStyles.date}>
+            <Date>
                 {props.date}
-            </div>
-            <div className={articleLinkStyles.excerpt}>
+            </Date>
+            <Excerpt>
                 {props.excerpt}
-            </div>
+            </Excerpt>
         </div>
     )
 }
