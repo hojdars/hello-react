@@ -6,24 +6,24 @@ import layoutStyles from "./layout.module.css"
 
 const ListLink = props => {
     return (
-        <li className={layoutStyles.listLinkItem}>
+        <div className={layoutStyles.listLinkItem}>
             <Link to={props.to}>{props.children}</Link>
-        </li>
+        </div>
     )
 }
 
 const Menu = () => {
     return (
-        <ul className={layoutStyles.menuMain}>
-            <ListLink to="/">Home</ListLink>
-            <ListLink to="/about/">About</ListLink>
-            <ListLink to="/travel/">Travels</ListLink>
-        </ul>
+        <div className={layoutStyles.menuMain}>
+                <ListLink to="/">Home</ListLink>
+                <ListLink to="/about/">About</ListLink>
+                <ListLink to="/travel/">Travels</ListLink>
+        </div>
     )
 }
 
 const Title = () => {
-    const data = useStaticQuery(        
+    const data = useStaticQuery(
         graphql`
             query {
                 site {
@@ -35,15 +35,17 @@ const Title = () => {
         `
     )
     return (
-        <Link to="/">
-            <h3 style={{ display: `inline` }}>{data.site.siteMetadata.title}</h3>
-        </Link>
+        <div className={layoutStyles.titleMain}>
+            <Link to="/">
+                <h2 style={{ display: `inline` }}>{data.site.siteMetadata.title}</h2>
+            </Link>
+        </div>
     )
 }
 
 const Header = () => {
     return (
-        <div>
+        <div className={layoutStyles.headerMain}>
             <Title />
             <Menu />
         </div>
@@ -54,7 +56,9 @@ export default function Layout(props) {
     return (
         <div className={layoutStyles.layoutMain}>
             <Header />
+            <div className={layoutStyles.bodyMain}>
             {props.children}
+            </div>
         </div>
     )
 }
