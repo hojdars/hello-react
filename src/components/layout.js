@@ -2,6 +2,7 @@ import React from "react"
 
 import { graphql, useStaticQuery, Link } from "gatsby"
 
+import sharedStyles from "./shared.module.css"
 import layoutStyles from "./layout.module.css"
 
 const ListLink = props => {
@@ -37,7 +38,7 @@ const Title = () => {
     return (
         <div className={layoutStyles.titleMain}>
             <Link to="/">
-                <h2 style={{ display: `inline` }}>{data.site.siteMetadata.title}</h2>
+                <h2>{data.site.siteMetadata.title}</h2>
             </Link>
         </div>
     )
@@ -52,14 +53,22 @@ const Header = () => {
     )
 }
 
-export default function Layout(props) {
+export function Body(props) {
     return (
         <div className={layoutStyles.layoutMain}>
-            <Header />
             <div className={layoutStyles.bodyMain}>
                 {props.children}
             </div>
         </div>
+    )
+}
+
+export default function Layout(props) {
+    return (
+        <Body>
+            <Header />
+            {props.children}
+        </Body>
     )
 }
 

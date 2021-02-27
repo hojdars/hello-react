@@ -10,6 +10,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-image`,
+    `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

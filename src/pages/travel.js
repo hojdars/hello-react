@@ -1,15 +1,22 @@
 import React from "react"
 
-import {graphql} from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import ArticleLink from "../components/article_link"
 
-export default function Home({data}) {
+export default function Home({ data }) {
   return (
     <Layout>
       <h1>travels.</h1>
-      <b>{data.allFile.edges.length} posts</b>
+      <b>{data.allFile.edges.length} travel reports</b>
+
+      <ArticleLink
+        to="../travels/travel_3"
+        title="Madeira 2018"
+        date="2018"
+        excerpt="Madeira is cool. We saw it! Don't believe me? Look no further!"
+      />
 
       <ArticleLink
         to="../travels/travel_1"

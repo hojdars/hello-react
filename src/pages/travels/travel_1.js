@@ -7,7 +7,7 @@ export default function BlogPost() {
     <Layout>
       <PostHeader
         title="Traveling light is great, here's what we take"
-        date="2021-02-21"
+        date="2021-02-27"
       />
 
       <p>

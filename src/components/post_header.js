@@ -1,6 +1,6 @@
 import React from "react"
 
-import postHeaderStyles from "./post_header.module.css"
+import postHeaderStyles from "./article_link.module.css"
 
 const PostHeader = props => {
     return (
