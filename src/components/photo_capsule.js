@@ -23,7 +23,7 @@ const SingleImage = (props) => {
         `}>
 
             <ImageContainer>
-                <img src={props.image} alt={props.description} />
+                <img src={props.images[0]} alt={props.descriptions[0]} />
             </ImageContainer>
 
             <div
@@ -33,44 +33,52 @@ const SingleImage = (props) => {
                 font-size: 18px;
                 font-style: italic;
             `}>
-                {props.description}
+                {props.descriptions[0]}
             </div>
         </div>
     )
 }
 
+// TODO: Styling this better
+
+const ImageDescription = styled.div`
+text-align: center;
+padding-top: 5px;
+font-size: 18px;
+font-style: italic;
+`
+
+const ImagesContainer = styled.div`
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+padding-top: 10px;
+padding-bottom: 10px;
+`
+
 const MultipleImages = (props) => {
+    let result = [];
+
+    props.images.forEach((image, index) => {
+        const description = props.descriptions[index];
+        result.push(<ImageContainer key={image}><img src={image} alt={description} /></ImageContainer>)
+        result.push(<ImageDescription key={description}>{description}</ImageDescription>)
+    });
+
     return (
-        <div
-            css={css`
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
-            padding-top: 10px;
-            padding-bottom: 10px;
-        `}>
-
-            {/* TODO: Implement multiple images */}
-            <ImageContainer>
-                <img src={props.image} alt={props.description} />
-            </ImageContainer>
-
-            <div
-                css={css`
-                text-align: center;
-                padding-top: 5px;
-                font-size: 18px;
-                font-style: italic;
-            `}>
-                {props.description}
-            </div>
-        </div>
-    )
+        <ImagesContainer>{result}</ImagesContainer>
+    );
 }
 
 const PhotoCapsule = (props) => {
     const numberOfImages = props.images.length;
+    const numberOfDescriptions = props.descriptions.length;
+
+    if (!(numberOfImages === numberOfDescriptions)) {
+        console.error("Different amount of images and descriptions!")
+        return;
+    }
 
     if (numberOfImages < 1) {
         console.error("Images can't be empty or negative!")

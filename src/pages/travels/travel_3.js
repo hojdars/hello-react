@@ -79,9 +79,8 @@ export default function BlogPost() {
       </p>
 
       <PhotoCapsule
-        image={day0_alps}
-        images={[day0_alps, day0_alps]}
-        description="Pohled na Alpy z letadla za svítání, přibližně 06:15"
+        images={[day0_alps]}
+        descriptions={["Pohled na Alpy z letadla za svítání, přibližně 06:15"]}
       />
 
     </TravelPost>
