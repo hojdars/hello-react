@@ -80,6 +80,7 @@ const Header = () => {
     return (
         <div css={css`
         display: flex;
+        margin-top: 2vh;
         `}>
             <Title />
             <Menu />

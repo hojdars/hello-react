@@ -1,22 +1,20 @@
 import React from "react"
 
 import { graphql } from "gatsby"
+import { css } from "@emotion/react"
 
 import Layout from "../components/layout"
-import ArticleLink from "../components/article_link"
+import { ArticleLink, ImageLink } from "../components/article_link"
+
+import maidera_banner from "../../public/banners/madeira-banner.jpg"
+// import triglav_banner from "../../public/banners/triglav-banner.jpg"
+// import attersee_banner from "../../public/banners/attersee-banner.jpg"
 
 export default function Home({ data }) {
   return (
     <Layout>
       <h1>travels.</h1>
       <b>{data.allFile.edges.length} travel reports</b>
-
-      <ArticleLink
-        to="../travels/travel_3"
-        title="Madeira 2018"
-        date="2018"
-        excerpt="Madeira is cool. We saw it! Don't believe me? Look no further!"
-      />
 
       <ArticleLink
         to="../travels/travel_1"
@@ -31,6 +29,25 @@ export default function Home({ data }) {
         date="2021-02-20"
         excerpt="Traveling to cool places is better than traveling to boring places. Some people like cities, some people like nature. Which of those are we? Read more and find out!"
       />
+
+      {/* Attersee 2019 */}
+      {/* <ImageLink
+        to="../travels/travel_4"
+        image={<img src={attersee_banner} css={css`width:100%;`} alt="attersee_banner" />}
+      /> */}
+
+      {/* Madeira 2018 */}
+      <ImageLink
+        to="../travels/travel_3"
+        image={<img src={maidera_banner} css={css`width:100%;`} alt="madeira_Banner" />}
+      />
+
+      {/* Triglav 2017 */}
+      {/* <ImageLink
+        to="../travels/travel_4"
+        image={<img src={triglav_banner} css={css`width:100%;`} alt="triglav_banner" />}
+      /> */}
+
     </Layout>
   )
 }

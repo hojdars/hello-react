@@ -14,9 +14,14 @@ line-height: calc(1ex / 0.32);
 margin: 0.65ex 0;
 `
 
+const LinkCapsule = styled.div`
+padding-bottom: 1rem;
+border-bottom: 1px solid #AAA;
+`
+
 const ArticleLink = props => {
     return (
-        <div>
+        <LinkCapsule>
             <Link to={props.to}>
                 <h3>{props.title}</h3>
             </Link>
@@ -26,8 +31,24 @@ const ArticleLink = props => {
             <Excerpt>
                 {props.excerpt}
             </Excerpt>
-        </div>
+        </LinkCapsule>
     )
 }
 
-export default ArticleLink
+const ImageLinkCapsule = styled.div`
+padding-bottom: 1rem;
+margin-top: 1rem;
+border-bottom: 1px solid #AAA;
+`
+
+const ImageLink = props => {
+    return (
+        <ImageLinkCapsule>
+            <Link to={props.to}>
+                {props.image}
+            </Link>
+        </ImageLinkCapsule>
+    )
+}
+
+export { ArticleLink, ImageLink }
