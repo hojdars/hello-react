@@ -16,18 +16,18 @@ export default function Home({ data }) {
       <h1>travels.</h1>
       <b>{data.allFile.edges.length} travel reports</b>
 
-      <ArticleLink
+      {/* <ArticleLink
         to="../travels/travel_1"
         title="Traveling light is great, here's what we take"
         date="2021-02-27"
         excerpt="Traveling is cool. Traveling light is more cool. The less you carry the larger distance you can cover. Take a look at what we carry and lighten up your mood and your backpack!"
-      />
+      /> */}
 
       <ArticleLink
         to="../travels/travel_2"
-        title="Cool places to visit"
-        date="2021-02-20"
-        excerpt="Traveling to cool places is better than traveling to boring places. Some people like cities, some people like nature. Which of those are we? Read more and find out!"
+        title="Západy slunce Brno, březen"
+        date="2021-03-19"
+        excerpt="Jaro nás na jižní Moravě obrařilo několika malebnými západy slunce. Sice se nemůžeme dostat mimo Brno, ale to nevadí :-)"
       />
 
       {/* Attersee 2019 */}

@@ -2,31 +2,68 @@ import React from "react"
 import Layout from "../../components/layout"
 import PostHeader from "../../components/post_header"
 
+import { ImageContainer } from "../../components/photo_capsule"
+
 export default function BlogPost({ data }) {
   return (
     <Layout>
       <PostHeader
-        title="Cool places to visit"
-        date="2021-02-20"
+        title="Západy slunce Brno, březen"
+        date="2021-03-19"
       />
 
       <p>
-        Traveling to cool places is better than traveling to boring places.
-        Some people like cities, some people like nature.
-          We are the <i>nature loving kind</i>, so do not expect to find museums and architecture here.
-        </p>
-
-      <p>Having said that, here are some places we can recommend you to visit:</p>
-      <p>
-        <ul>
-          <li>Madeira</li>
-          <li>Slovenia</li>
-          <li>Norway</li>
-          <li>Slovakia</li>
-        </ul>
+        Jaro nás na jižní Moravě obrařilo několika malebnými západy slunce. Sice se nemůžeme dostat mimo Brno, ale to nevadí :-)
       </p>
 
-      <p>That's all for today folks!</p>
+      <h4>
+        Brno - západ slunce 10. 03. 2021
+      </h4>
+
+      <p>
+        Pohled na Žabovřesky a Komín.
+      </p>
+
+      <p>
+        <ImageContainer>
+          <a href="https://i.imgur.com/pQ04BwE.jpg">
+            <img src="https://i.imgur.com/pQ04BwE.jpg" alt="sunset 1" />
+          </a>
+        </ImageContainer>
+      </p>
+
+      <p>
+        <ImageContainer>
+          <a href="https://i.imgur.com/Msp8fq0.jpg">
+            <img src="https://i.imgur.com/Msp8fq0.jpg" alt="sunset 1" />
+          </a>
+        </ImageContainer>
+      </p>
+
+      <h4>
+        Brno - západ slunce 17. 03. 2021
+      </h4>
+
+      <p>
+        Okolí Palackého vrchu.
+      </p>
+
+      <p>
+        <ImageContainer>
+          <a href="https://i.imgur.com/oXdz255.jpg">
+            <img src="https://i.imgur.com/oXdz255.jpg" alt="sunset 1" />
+          </a>
+        </ImageContainer>
+      </p>
+
+      <p>
+        <ImageContainer>
+          <a href="https://i.imgur.com/XiFwOWd.jpg">
+            <img src="https://i.imgur.com/XiFwOWd.jpg" alt="sunset 1" />
+          </a>
+        </ImageContainer>
+      </p>
+
     </Layout>
   )
 }

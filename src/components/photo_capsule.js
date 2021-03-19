@@ -92,3 +92,5 @@ const PhotoCapsule = (props) => {
 }
 
 export default PhotoCapsule
+
+export { ImageContainer }

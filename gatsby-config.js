@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  pathPrefix: "/hello-react",
   siteMetadata: {
     title: `MyDemoWeb`,
   },
